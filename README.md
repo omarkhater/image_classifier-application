@@ -14,7 +14,7 @@ In this part, a Python app ready to be deployed for any platform which can be ru
 The files for this part are in app subfolder. 
 
 ## Used Libraries 
-This method is developed using lastet available version of TensorFlow which is 2.4.0
+This method is developed using the lastet available version of TensorFlow which is 2.4.0
 ## Results
 The model is GPU-trained to acheive 70% accuracy on the test data set via google coolab. 
  
