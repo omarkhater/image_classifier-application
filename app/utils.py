@@ -7,59 +7,7 @@ Created on Wed Dec 23 20:18:37 2020
 import tensorflow as tf
 from PIL import Image
 import numpy as np
-
-def normalize(image, label, image_size = 224):
-    """
-    Normalize input image to [0,1] range using given size. 
-    Return the normalized image with associated label.
-
-    Parameters
-    ----------
-    image : TYPE
-        DESCRIPTION.
-    label : TYPE
-        DESCRIPTION.
-    image_size : TYPE, optional
-        DESCRIPTION. The default is 224.
-
-    Returns
-    -------
-    image : TYPE
-        DESCRIPTION.
-    label : TYPE
-        DESCRIPTION.
-
-    """
-    image = tf.cast(image, tf.float32)
-    image /= 255
-    image = tf.image.resize_with_crop_or_pad(image, target_height = image_size, target_width = image_size)
-    return image, label
-
-def augment_data(image, label):
-    """
-    Perform data augmentation on given data set to enhance the model performance     
-
-    Parameters
-    ----------
-    image : TYPE
-        DESCRIPTION.
-    label : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    image : TYPE
-        DESCRIPTION.
-    label : TYPE
-        DESCRIPTION.
-
-    """
-    image = tf.image.random_flip_left_right(image)
-    image = tf.image.random_flip_up_down(image)
-    image = tf.image.random_contrast(image, 0.4, 1.0)
-    image = tf.image.rot90(image)
-      # Add more augmentation of your choice
-    return image, label
+import json
 
 def process_image(image,image_size = 224):
     """
@@ -84,7 +32,8 @@ def process_image(image,image_size = 224):
     imten /= 255
     return imten.numpy()
 
-def predict(image_path , model , image_size = 224, top_k = 5):
+def predict(image_path , model , image_size = 224, top_k = 5,
+            MapLabels = 'D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_classifier/label_map.json'):
     """
     
     Predict the label of unseen image by given model. 
@@ -114,4 +63,9 @@ def predict(image_path , model , image_size = 224, top_k = 5):
     all_classes = np.argsort(all_probs)
     probs = all_probs[:,all_classes[:,-top_k:]]
     classes = all_classes[:,-top_k:]
-    return probs[0][0], classes[0]
+    
+    with open(MapLabels, 'r') as f:
+        class_names = json.load(f)
+        
+    mappednames = [class_names[str(i+1)] for i in classes]
+    return probs[0][0], classes[0],mappednames
