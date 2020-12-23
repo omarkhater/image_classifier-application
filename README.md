@@ -7,7 +7,7 @@ This application is developed to recgonize the flower type from different 102 ca
 
 ## Repo structure
 ### 1- Development story: 
-In this part, we described the efforts done upon completing the app along with all necessary details to reproduce the results. 
+In this part, we described the efforts done upon completing the app along with all the necessary details to reproduce the results. 
 The files for this part, are Image_Classifier_Project_colab.ipynb, Image_Classifier_Project_colab.html
 ### 2- Complete app: 
 In this part, a Python app ready to be deployed for any platform which can be run via command window. 
