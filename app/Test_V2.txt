@@ -1,0 +1,1 @@
+python predict_V2.py D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_classifier/test_images/cautleya_spicata.jpg D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_classifier/BestClassifier.h5

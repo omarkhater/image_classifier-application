@@ -23,5 +23,4 @@ python predict.py
 
 2- Image, model : Expected returning default number of classes; currently = 5
 
-python predict.py /home/workspace/test_images/cautleya_spicata.jpg /home/workspace/BestClassifier.h5 
-
+python predict.py /home/workspace/test_images/cautleya_spicata.jpg /home/workspace/BestClassifier.h5
