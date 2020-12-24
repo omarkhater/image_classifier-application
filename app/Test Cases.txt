@@ -1,3 +1,5 @@
+Local Machine 
+
 1- No arguments: Error expected 
 python predict.py 
 
@@ -12,3 +14,14 @@ python predict.py D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_cl
 4- Image, model, labelsfile: Expected returning the labels of the classes
 
 python predict.py D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_classifier/test_images/cautleya_spicata.jpg D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_classifier/BestClassifier.h5 D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_classifier/label_map.json
+
+---------------
+Server
+1- No arguments: Error expected 
+
+python predict.py
+
+2- Image, model : Expected returning default number of classes; currently = 5
+
+python predict.py /home/workspace/test_images/cautleya_spicata.jpg /home/workspace/BestClassifier.h5 
+

@@ -10,9 +10,6 @@ import tensorflow_hub as hub
 import getopt, sys
 import warnings
 warnings.filterwarnings('ignore')
-import logging
-logger = tf.get_logger()
-logger.setLevel(logging.ERROR)
 
 def main():
     
@@ -24,11 +21,10 @@ def main():
             image_path = command[1]
             model_path = command[2]
             model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer':hub.KerasLayer})
-            probs, classes,_ = predict(image_path, model)
+            probs, classes, _ = predict(image_path, model)
             print('Returning default number of classes = 5')
+            print('Classes = {}\nPropabilities = {} '.format(probs, classes))
             
-            return 
-        
         elif len(command) == 4:
             
             image_path = command[1]
@@ -37,18 +33,18 @@ def main():
             if option.isnumeric(): # if the option is --top_k
             
                 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer':hub.KerasLayer})
-                _, classes ,_ = predict(image_path, model ,top_k = int(option))
+                probs, classes , _ = predict(image_path, model ,top_k = int(option))
                 print('Returning optional number of classes = {}'.format(option))
+                print('Classes = {}\nPropabilities = {} '.format(probs, classes))
                 
-                return classes
             
             else: # if the option is --category_names 
                 
                 model = tf.keras.models.load_model(model_path, custom_objects={'KerasLayer':hub.KerasLayer})
-                _, _, mappednames = predict(image_path, model , MapLabels = option)
-                
-                return mappednames
-            
+                probs, classes, labels = predict(image_path, model , MapLabels = option)
+                print('Returning labels = {}'.format(option))
+                print('Classes = {}\nPropabilities = {}\Labels = {}'.format(probs, classes, labels))
+
             
         elif len(command) < 2:
             

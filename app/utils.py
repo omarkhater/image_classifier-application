@@ -68,4 +68,4 @@ def predict(image_path , model , image_size = 224, top_k = 5,
         class_names = json.load(f)
         
     mappednames = [class_names[str(i+1)] for i in classes]
-    return probs[0][0], classes[0],mappednames
+    return probs[0][0], classes[0], mappednames
