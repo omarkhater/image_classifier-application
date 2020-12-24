@@ -12,6 +12,15 @@ The files for this part, are Image_Classifier_Project_colab.ipynb, Image_Classif
 ### 2- Complete app: 
 In this part, a Python app ready to be deployed for any platform which can be run via command window. 
 The files for this part are in app subfolder. 
+#### App options
+1- No arguments: Error expected <br>
+Example: python predict.py <br>
+2- Image, model : Expected returning default number of classes; currently = 5 <br>
+Example: python predict.py \path\for\testimage \path\for\model <br>
+3- Image, model, top_k: Expected returning optional number of classes <br>
+Example: python predict.py \path\for\testimage \path\for\model 3  <br>
+4- Image, model, labelsfile: Expected returning the labels of the classes <br>
+Example: python predict.py \path\for\testimage \path\for\model \path\for\json\file\have\mapping\for\labels <br>
 
 ## Used Libraries 
 This method is developed using the lastet available version of TensorFlow which is 2.4.0
