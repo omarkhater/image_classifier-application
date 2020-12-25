@@ -11,17 +11,26 @@ In this part, we described the efforts done upon completing the app along with a
 The files for this part, are Image_Classifier_Project_colab.ipynb, Image_Classifier_Project_colab.html
 ### 2- Complete app: 
 In this part, a Python app ready to be deployed for any platform which can be run via command window. 
-The files for this part are in app subfolder. 
+The files for this part are in `app` subfolder. 
 #### App options
-1- No arguments: Error expected <br>
-Example: python predict.py <br>
-2- Image, model : Expected returning default number of classes; currently = 5 <br>
-Example: python predict.py \path\for\testimage \path\for\model <br>
-3- Image, model, top_k: Expected returning optional number of classes <br>
-Example: python predict.py \path\for\testimage \path\for\model 3  <br>
-4- Image, model, labelsfile: Expected returning the labels of the classes <br>
-Example: python predict.py \path\for\testimage \path\for\model \path\for\json\file\have\mapping\for\labels <br>
+By executing the command below:
+`python predict.py -h` 
+you can view available options. For now, 
 
+`usage: predict_V2.py [-h] [--top_k TOP_K] [--category_names CATEGORY_NAMES]
+                     image model
+
+List of Arguments
+
+positional arguments:
+  image                 Image path
+  model                 Saved model path
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --top_k TOP_K         Top K most likely classes
+  --category_names CATEGORY_NAMES
+                        Input JSON file with category names`
 ## Used Libraries 
 This method is developed using the lastet available version of TensorFlow which is 2.4.0
 ## Results
