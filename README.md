@@ -13,11 +13,12 @@ The files for this part, are Image_Classifier_Project_colab.ipynb, Image_Classif
 In this part, a Python app ready to be deployed for any platform which can be run via command window. 
 The files for this part are in `app` subfolder. 
 #### App options
-By executing the command below:
-`python predict.py -h` 
-you can view available options. For now, 
+By executing the command:
+`python predict.py -h`  
+you can view available options. For now,   
 
-`usage: predict_V2.py [-h] [--top_k TOP_K] [--category_names CATEGORY_NAMES]
+```
+usage: predict_V2.py [-h] [--top_k TOP_K] [--category_names CATEGORY_NAMES]
                      image model
 
 List of Arguments
@@ -30,7 +31,9 @@ optional arguments:
   -h, --help            show this help message and exit
   --top_k TOP_K         Top K most likely classes
   --category_names CATEGORY_NAMES
-                        Input JSON file with category names`
+                        Input JSON file with category names
+```
+                        
 ## Used Libraries 
 This method is developed using the lastet available version of TensorFlow which is 2.4.0
 ## Results
