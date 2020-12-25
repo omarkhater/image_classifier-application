@@ -14,7 +14,7 @@ The files for this part are in `app` subfolder.
 #### App options
 By executing the command:
 `python predict.py -h`  
-you can view available options. For now,   
+you can view all the available options. For now,   
 
 ```
 usage: predict_V2.py [-h] [--top_k TOP_K] [--category_names CATEGORY_NAMES]
