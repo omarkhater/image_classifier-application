@@ -32,8 +32,7 @@ def process_image(image,image_size = 224):
     imten /= 255
     return imten.numpy()
 
-def predict(image_path , model , image_size = 224, top_k = 5,
-            MapLabels = 'D:/ML/courses/MachineLearningWithTF/codes/projects/p2_image_classifier/label_map.json'):
+def predict(image_path , model , MapLabels = '', image_size = 224, top_k = 5):
     """
     
     Predict the label of unseen image by given model. 
@@ -61,11 +60,16 @@ def predict(image_path , model , image_size = 224, top_k = 5,
     processed_test_image = process_image(test_image, image_size = image_size)
     all_probs =  model.predict(np.expand_dims(processed_test_image, axis = 0))
     all_classes = np.argsort(all_probs)
-    probs = all_probs[:,all_classes[:,-top_k:]]
-    classes = all_classes[:,-top_k:]
+    probs = np.flip(all_probs[:,all_classes[:,-top_k:]])
+    classes = np.flip(all_classes[:,-top_k:])
     
-    with open(MapLabels, 'r') as f:
-        class_names = json.load(f)
-        
-    mappednames = [class_names[str(i+1)] for i in classes]
+    
+    if MapLabels != '':
+        with open(MapLabels, 'r') as f:
+            class_names = json.load(f)
+            
+        mappednames = [class_names[str(i+1)] for i in classes[0]]
+    else:
+        mappednames = []
+
     return probs[0][0], classes[0], mappednames
