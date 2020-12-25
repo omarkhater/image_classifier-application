@@ -35,7 +35,7 @@ optional arguments:
 ```
                         
 ## Used Libraries 
-This method is developed using the lastet available version of TensorFlow which is 2.4.0
+This app is developed using the lastet available version of TensorFlow which is `2.4.0` and [`MobileNet`](https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4) pre-trained model from TensorFlow Hub
 ## Results
 The model is GPU-trained to acheive 70% accuracy on the test data set via google coolab. 
  
