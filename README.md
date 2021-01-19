@@ -1,5 +1,5 @@
 # Deep Learning powered Image classifier 
-A complete development cycle of modern AI apps which exploits the state of the art deep learning pretrained models to solve a specific problem via transfer learning. 
+A complete development cycle of modern AI apps that exploits the state of the art deep learning pre-trained models to solve a specific problem via transfer learning. 
 
 ## Objective
 This application is developed to recgonize the flower type from 102 different categories by training on [102 Category Flower Dataset](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html). 
