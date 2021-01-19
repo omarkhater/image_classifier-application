@@ -1,4 +1,4 @@
-# Image classifier using the state of the art deep learning models 
+# Deep Learning powered Image classifier 
 A complete development cycle of modern AI apps which exploits the state of the art deep learning pretrained models to solve a specific problem via transfer learning. 
 
 ## Objective
